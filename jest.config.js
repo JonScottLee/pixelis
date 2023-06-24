@@ -12,4 +12,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  moduleNameMapper: {
+    '\\.(css|less|scss)$': 'identity-obj-proxy'
+  }
 };

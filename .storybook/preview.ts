@@ -4,6 +4,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import '../src/tailwind.css'
 
+
 const MY_VIEWPORTS = {
   screen_lg: {
     name: '1200px',

@@ -1,12 +1,19 @@
-import { render, fireEvent } from '@testing-library/react';
-import { TextField } from './text-field';
+import { render } from '@testing-library/react'
+import { TextField } from './text-field'
 
 describe('Text Field', () => {
   it('should render successfully', () => {
     // Act
-    const { baseElement } = render(<TextField id="foo" />);
+    const { baseElement } = render(
+      <TextField
+        label="Disabled"
+        disabled
+        id="disabled"
+        helperText="Enter first name"
+      />
+    )
 
     // Assert
-    expect(baseElement).toBeTruthy();
-  });
-});
+    expect(baseElement).toBeTruthy()
+  })
+})

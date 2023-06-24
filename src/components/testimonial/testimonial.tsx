@@ -14,9 +14,9 @@ export const Testimonial: FC<TestimonialProps> = ({ text, attribution }) => {
   return (
     <p className={classes}>
       {text}
-      <div className="mt-2 text-base tracking-widest text-primary-500 uppercase ">
+      <span className="block mt-2 text-base tracking-widest text-primary-500 uppercase ">
         {attribution}
-      </div>
+      </span>
     </p>
   );
 };

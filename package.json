@@ -3,12 +3,17 @@
   "private": false,
   "version": "1.0.0",
   "main": "./dist/pixelis.umd.js",
-  "module": "./dist/pixelis.es.js",
+  "module": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "types": "./dist/index.d.ts",
   "dependencies": {
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@testing-library/react": "^14.0.0",
+    "cssnano": "^6.0.1",
+    "postcss-cli": "^10.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,6 +53,7 @@
     "lint-staged": "^13.2.2",
     "npm": "^9.7.2",
     "postcss": "^8.4.24",
+    "postcss-nested": "^4.2.3",
     "rome": "12.0.0",
     "storybook": "^7.0.23",
     "tailwindcss": "^3.0.19",
@@ -56,11 +62,16 @@
     "vite-plugin-dts": "^2.3.0",
     "vitest": "^0.32.2"
   },
+  ".": {
+    "import": "./dist/pixelis-ui.js",
+    "require": "./dist/pixelis-ui.umd.cjs"
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "build:tailwind": "postcss src/tailwind.css -o dist/pixelis-ui.css",
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && yarn build:tailwind",
     "preview": "vite preview",
     "prepare": "husky install",
     "test": "jest"

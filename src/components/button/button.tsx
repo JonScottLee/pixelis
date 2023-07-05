@@ -8,7 +8,6 @@ type ButtonProps = {
   active?: boolean;
   additionalClasses?: string;
   disabled?: boolean;
-  href?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: ButtonSizes;
   variant?: ButtonVariants;
@@ -25,7 +24,6 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   asLink,
   children,
   disabled = false,
-  href,
   onClick,
   onColor = false,
   size = 'large',
@@ -55,11 +53,8 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   };
 
   return (
-    asLink ? (
-      <a href={href} className={classes}>{children}</a>
-    ) : (
     <button onClick={onButtonClick} disabled={disabled} className={classes}>
       {children}
     </button>
-  ))
+  )
 };

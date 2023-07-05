@@ -24,9 +24,9 @@ export const Kinds: FC = () => (
 
 export const ButtonAsLink: FC = () => (
   <RowWrapper>
-    <Button href="#" asLink>Primary</Button>
-    <Button href="#" asLink variant="secondary">Secondary</Button>
-    <Button href="#" asLink variant="tertiary">Tertiary</Button>
+    <Button asLink>Primary</Button>
+    <Button asLink variant="secondary">Secondary</Button>
+    <Button asLink variant="tertiary">Tertiary</Button>
   </RowWrapper>
 );
 

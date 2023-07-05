@@ -22,6 +22,14 @@ export const Kinds: FC = () => (
   </RowWrapper>
 );
 
+export const ButtonAsLink: FC = () => (
+  <RowWrapper>
+    <Button href="#" asLink>Primary</Button>
+    <Button href="#" asLink variant="secondary">Secondary</Button>
+    <Button href="#" asLink variant="tertiary">Tertiary</Button>
+  </RowWrapper>
+);
+
 export const Color: FC = () => (
   <div className="bg-primary p-5 rounded">
     <RowWrapper>

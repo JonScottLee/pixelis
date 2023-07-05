@@ -8,20 +8,24 @@ type ButtonProps = {
   active?: boolean;
   additionalClasses?: string;
   disabled?: boolean;
+  href?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: ButtonSizes;
   variant?: ButtonVariants;
   onColor?: boolean;
+  asLink?: boolean;
 };
 
 const rootClasses =
-  'button py-3 px-4 tracking-wider transition ease-in-out active:scale-90 hover:scale-105 rounded';
+  'button py-3 px-4 tracking-wider transition ease-in-out hover:scale-105 rounded';
 
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   active = false,
   additionalClasses = '',
+  asLink,
   children,
   disabled = false,
+  href,
   onClick,
   onColor = false,
   size = 'large',
@@ -30,6 +34,7 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   const classes = cx(
     rootClasses,
     {
+      'active:scale-90': !asLink,
       'on-color': onColor,
       'button--primary': variant === 'primary',
       'button--secondary': variant === 'secondary',
@@ -50,8 +55,11 @@ export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   };
 
   return (
+    asLink ? (
+      <a href={href} className={classes}>{children}</a>
+    ) : (
     <button onClick={onButtonClick} disabled={disabled} className={classes}>
       {children}
     </button>
-  );
+  ))
 };

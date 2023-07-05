@@ -1,8 +1,6 @@
 import { FC } from 'react';
 import cx from 'classnames';
 
-import './button.css';
-
 type ButtonVariants = 'primary' | 'secondary' | 'tertiary';
 type ButtonSizes = 'small' | 'medium' | 'large';
 
@@ -16,7 +14,6 @@ type ButtonProps = {
   onColor?: boolean;
 };
 
-// Move these to button.css
 const rootClasses =
   'button py-3 px-4 tracking-wider transition ease-in-out active:scale-90 hover:scale-105 rounded';
 

@@ -16,7 +16,7 @@ type ButtonProps = {
 };
 
 const rootClasses =
-  'button py-3 px-4 tracking-wider transition ease-in-out hover:scale-105 rounded';
+  'button text-pink py-3 px-4 tracking-wider transition ease-in-out hover:scale-105 rounded';
 
 export const Button: FC<React.PropsWithChildren<ButtonProps>> = ({
   active = false,

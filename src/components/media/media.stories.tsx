@@ -1,6 +1,6 @@
 import type { Meta } from '@storybook/react';
 import { Media } from './media';
-import { H2, P } from '../helpers/typography';
+import { H2, P } from '../typography';
 import { ColWrapper } from '../../../.storybook/storybook-components';
 
 const meta: Meta<typeof Media> = {
